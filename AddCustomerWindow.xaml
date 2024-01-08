@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfApp1.AddCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить клиента" Height="680" Width="426" MinWidth="426" MinHeight="680">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Text="Ввод данных о станке" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="1" Margin="10,5,6,0" VerticalAlignment="Top"><Run Text="Дата начала ремонта"/><Run Language="ru-ru" Text=":"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <DatePicker x:Name="datePicker" Margin="20,10,10,0" Height="30" VerticalAlignment="Top" Grid.Row="1" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Код станка" Grid.Row="1" Margin="10,60,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="firstNameTextBox" Grid.Row="1" Margin="20,60,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Год выпуска" Grid.Row="1" Margin="10,113,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.483,-0.575" VerticalAlignment="Top"/>
+        <TextBox x:Name="lastNameTextBox" Grid.Row="1" Margin="20,113,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Название" Grid.Row="1" Margin="10,169,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="patronymicTextBox" Grid.Row="1" Margin="20,169,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Марка" Grid.Row="1" Margin="10,225,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="peopleCountTextBox" Grid.Row="1" Margin="20,225,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Продолжительность" Grid.Row="1" Margin="10,281,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="roomNumberTextBox" Grid.Row="1" Margin="20,281,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Примечания" Grid.Row="1" Margin="10,337,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="passportDataTextBox" Grid.Row="1" Margin="20,337,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Стоимость ремонта" Grid.Row="1" Margin="10,393,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="roomPriceTextBox" Grid.Row="1" Margin="20,393,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Код ремонта" Grid.Row="1" Margin="10,449,158,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="customerCodeTextBox" Grid.Row="1" Margin="20,449,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <TextBlock Text="Код вида станка" Margin="10,505,252,0" RenderTransformOrigin="0.406,0.504" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="roomLevelTextBox" Grid.Row="1" Margin="20,505,10,0" Height="30" VerticalAlignment="Top" Cursor="Hand" Grid.Column="1"/>
+
+        <Button x:Name="addButton" Content="Добавить" Grid.Row="1" HorizontalAlignment="Left" Margin="10,563,0,0" Width="80" Click="addButton_Click" BorderThickness="0,0,0,0" Background="#FF5055AB" Foreground="White" Height="40" VerticalAlignment="Top"/>
+        <Button x:Name="cancelButton" Content="Отмена" Grid.Row="1" Grid.Column="1" Margin="0,563,10,0" Click="cancelButton_Click" HorizontalAlignment="Right" Width="131" Height="40" VerticalAlignment="Top" Background="#FF5055AB" Padding="0,0,0,0" Foreground="White"/>
+    </Grid>
+</Window>

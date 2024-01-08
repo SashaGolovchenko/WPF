@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="WpfApp1.MainWindow"
+        Title="Hotel Management System" Height="480" Width="746" Loaded="Window_Loaded" MinHeight="480">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="customerListView" Height="300" VerticalAlignment="Top" Grid.Column="1" BorderThickness="1,1,1,1" Margin="0,31,10,0" av:ItemsSource="{av:SampleData ItemCount=5}" HorizontalAlignment="Right" Width="726">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Дата начала ремонта" DisplayMemberBinding="{Binding Date}" Width="160"/>
+                    <GridViewColumn Header="Код станка" DisplayMemberBinding="{Binding FirstName}" Width="40"/>
+                    <GridViewColumn Header="Год выпуска" DisplayMemberBinding="{Binding LastName}" Width="70"/>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Patronymic}" Width="80"/>
+                    <GridViewColumn Header="Марка" DisplayMemberBinding="{Binding PeopleCount}" Width="160"/>
+                    <GridViewColumn Header="Продолжительность" DisplayMemberBinding="{Binding RoomNumber}" Width="120"/>
+                    <GridViewColumn Header="Примечания" DisplayMemberBinding="{Binding PassportData}" Width="110"/>
+                    <GridViewColumn Header="Стоимость ремонта" DisplayMemberBinding="{Binding RoomPrice}" Width="100"/>
+                    <GridViewColumn Header="Код ремонта" DisplayMemberBinding="{Binding CustomerCode}" Width="180"/>
+                    <GridViewColumn Header="Код вида станка" DisplayMemberBinding="{Binding RoomLevel}" Width="140"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="addCustomerButton" Content="Добавить станок" HorizontalAlignment="Left" Margin="10,384,0,0" Width="120" Click="addCustomerButton_Click" Height="40" VerticalAlignment="Top" Background="#FF5055AB" Grid.ColumnSpan="2" BorderThickness="0,0,0,0" Foreground="White" Cursor="Hand"/>
+        <Button x:Name="saveToFileButton" Content="Сохранить данные в файл" HorizontalAlignment="Left" Margin="416,384,0,0" VerticalAlignment="Top" Width="159" Click="saveToFileButton_Click" Height="40" Background="#FF5055AB" RenderTransformOrigin="0.5,0.5" Grid.Column="1" BorderThickness="0,0,0,1" Foreground="White" Cursor="Hand"/>
+        <Button x:Name="discountButton" Content="Применить скидку" HorizontalAlignment="Left" Margin="581,384,0,0" VerticalAlignment="Top" Width="120" Click="discountButton_Click" Height="40" Background="#FF5055AB" Grid.Column="1" BorderThickness="0,0,0,0" ClipToBounds="True" Foreground="White" Cursor="Hand"/>
+        <TextBox x:Name="discountTextBox" Margin="701,384,0,0" TextWrapping="Wrap" Text="20" Grid.Column="1" HorizontalAlignment="Left" Width="33" Height="40" VerticalAlignment="Top" BorderBrush="#FF5055AB" Foreground="#FF5055AB" />
+        <Label x:Name="discountLabel" Content="%" HorizontalAlignment="Left" Margin="716,380,0,0" VerticalAlignment="Top" Height="30" Width="20" Grid.Column="1" Foreground="#FF5055AB"/>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Text="Полученные станки" FontWeight="Bold" Margin="10,6,0,0"/>
+        <TextBox Grid.ColumnSpan="2" x:Name="FilterTextbox" Margin="628,14,10,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
+        <ComboBox Grid.ColumnSpan="2" Name="FIlterBy" HorizontalAlignment="Left" Height="18" Margin="523,14,0,0" VerticalAlignment="Top" Width="106"/>
+    </Grid>
+</Window>
